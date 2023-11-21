@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+package auth;
+
+service AuthService {
+  rpc Register (RegisterRequest) returns (Response) {}
+  rpc Login (LoginRequest) returns (Response) {}
+  rpc ValidateToken (ValidateTokenRequest) returns (Response) {}
+  rpc TokenRenew (TokenRenewRequest) returns (Response) {}
+}
+
+// Response
+message Response {
+  int32 status = 1;
+  bool error = 2;
+  string message = 3;
+  optional google.protobuf.Struct data = 4;
+}
+
+// Token
+message TokenRenewRequest {
+  string token = 1;
+}
+
+message ValidateTokenRequest {
+  string token = 1;
+}
+
+// User
+message UserResponse {
+  int32 id = 1;
+  string username = 2;
+}
+
+message UserRequest {
+  int32 id = 1;
+}
+
+// Register
+message RegisterRequest {
+  string email = 1;
+  string username = 2;
+  string nickname = 3;
+  string password = 4;
+}
+
+// Login
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+  bool remember = 3;
+}
+

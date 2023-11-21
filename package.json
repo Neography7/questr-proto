@@ -1,0 +1,13 @@
+{
+  "name": "questr-proto",
+  "version": "1.0.0",
+  "description": "This repository contains the GRPC proto files of the Questr Q&A application.",
+  "author": "İlker Akyel",
+  "private": true,
+  "license": "Beerware",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+}
